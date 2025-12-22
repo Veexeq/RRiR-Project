@@ -1,7 +1,28 @@
+:root {
+  --accent-line: #534B52;
+}
+
 .wrapper {
   display: flex;
   flex: 1;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  margin: 0 25rem;
+}
+
+.title {
+  padding: 1rem;
+  border-bottom: var(--accent-line) 0.1rem solid;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+h1, h2, p {
+  margin: 0;
 }
