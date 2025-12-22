@@ -1,0 +1,107 @@
+:root {
+  /* === Color palette === */
+  --bg-page: #F1F0EA;
+  --bg-surface: #FFFFFF;
+  --bg-input: #E0DDCF;
+
+  --text-primary: #2D232E;
+  --text-body: #474448;
+  --text-muted: #534B52;
+
+  --border-subtle: #E0DDCF;
+  --primary-action: #2D232E;
+  --accent-line: #534B52;
+  /* === End === */
+
+  /* === Typography === */
+  --font-main: 'Bricolage Grotesque', sans-serif;
+
+  --font-size-h1: 3rem;
+  --line-height-h1: 1.1;
+  
+  --font-size-h2: 2rem;
+  --line-height-h2: 1.25;
+  
+  --font-size-h3: 1.5rem;
+  --line-height-h3: 1.35;
+  
+  --font-size-lead: 1.25rem;
+  
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+  
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+  /* === End === */
+}
+
+#root {
+  min-height: 100vh;
+  min-width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  color: var(--text-primary);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-body);
+  margin-bottom: 16px;
+
+  /* If necessary, set maximum width of the <p> as 65 characters */
+  /* max-width: 65ch;  */
+}
+
+.text-lead {
+  font-size: var(--font-size-lead);
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+label, button {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+}
