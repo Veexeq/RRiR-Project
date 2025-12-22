@@ -1,0 +1,22 @@
+:root {
+  --accent-line: #534B52;
+  --side-margin: 25rem;
+  --bg-ui: #E0DDCF;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  justify-content: space-between;
+
+  margin: 0 var(--side-margin);
+  padding: 1rem;
+
+  border-top: var(--accent-line) 3px solid;
+}
+
+.text {
+  padding: 1rem;
+  text-align: center;
+}
