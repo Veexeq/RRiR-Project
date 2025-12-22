@@ -1,0 +1,11 @@
+:root {
+  --accent-line: #534B52;
+  --side-margin: 25rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0 var(--side-margin);
+}

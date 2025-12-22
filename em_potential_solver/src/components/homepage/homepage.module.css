@@ -1,5 +1,6 @@
 :root {
   --accent-line: #534B52;
+  --side-margin: 25rem;
 }
 
 .wrapper {
@@ -7,7 +8,7 @@
   flex: 1;
   flex-flow: column nowrap;
   justify-content: center;
-  margin: 0 25rem;
+  margin: 0 var(--side-margin);
 }
 
 .title {
@@ -21,8 +22,4 @@
   flex-flow: column nowrap;
   align-items: flex-start;
   padding: 1rem;
-}
-
-h1, h2, p {
-  margin: 0;
 }

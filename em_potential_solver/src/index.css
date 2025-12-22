@@ -58,11 +58,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, p, label, button {
+  margin: 0;
+}
+
 h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
   color: var(--text-primary);
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   font-weight: 700;
 }
 
@@ -70,8 +74,8 @@ h2 {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
   color: var(--text-primary);
-  margin-top: 40px;
-  margin-bottom: 20px;
+  /* margin-top: 40px; */
+  /* margin-bottom: 20px; */
   font-weight: 600;
 }
 
@@ -79,7 +83,7 @@ h3 {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
   color: var(--text-primary);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   font-weight: 500;
 }
 
@@ -87,7 +91,7 @@ p {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--text-body);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 
   /* If necessary, set maximum width of the <p> as 65 characters */
   /* max-width: 65ch;  */
