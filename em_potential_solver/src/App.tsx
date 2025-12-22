@@ -10,10 +10,12 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/theory" element={<Theory />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/theory" element={<Theory />} />
+        </Routes>
+      </main>
 
       <Footer />
     </BrowserRouter>
