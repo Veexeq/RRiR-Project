@@ -4,7 +4,7 @@ import styles from './theory.module.css'
 function Theory() {
   return (
     <div className={styles.wrapper}>
-      <br />
+      <br/>
       <h2>Wstęp teoretyczny</h2>
       <br />
       <p>W tej sekcji znajduje się kompletny wstęp związany z teorią, który potrzebny jest do rozpoczęcia pracy nad znajdowaniem numerycznego rozwiązania problemu. Można go podzielić na następujące części:</p>
@@ -17,7 +17,7 @@ function Theory() {
       </ul>
       <br />
 
-      <h3>Treść problemu</h3>
+      <h3 id="intro">Treść problemu</h3>
       <br />
       <p>Zagadnienie, które mamy rozwiązać przy użyciu MES to równanie opisujące potencjał elektromagnetyczny:</p>
       <BlockMath math="\frac{d^2\phi}{dx^2}=-\frac{\rho}{\epsilon_r(x)}"/>
