@@ -148,8 +148,71 @@ function Theory() {
       <p>Funkcje bazowe nie są tutaj dowolne, mają szczególną postać. W przypadku jednowymiarowym, jako funkcje bazowe stosujemy tzw. <b>funkcje daszkowe</b>. Funkcja daszkowa <InlineMath math="e_i(x)"/> w <InlineMath math="i"/>-tym węźle przyjmuje wartość <InlineMath math="1"/>, spada do <InlineMath math="0"/> w sąsiednich węzłach, a następnie jest funkcją stałą równą <InlineMath math="0"/>.</p>
       <br />
       <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
-      <br />
       <HatFunctionsChart />
+      <p>Teraz możemy połączyć przygotowane wcześniej sformułowanie wariacyjne wraz z aproksymacją funkcji <InlineMath math="w"/> w jedną całość. Zrobimy to korzystając z tzw. <b>metody Galerkina</b>, która w uproszczeniu mówi, że będziemy testować nasze rozwiązanie tym samym, czym je budujemy. Oznacza to, że nasza funkcja testująca <InlineMath math="v(x)"/> ze sformułowania wariacyjnego przyjmie postać <InlineMath math="e_i"/>, co wygeneruje nam <InlineMath math="n+1"/> równań liniowych, które ubierzemy w macierz.</p>
+      <br />
+      <p>Spróbujmy stworzyć macierz, wpierw kontynuując prosty przykład, który rozpoczęliśmy powyżej, ponieważ uogólnienie na większą liczbę <InlineMath math="n"/> będzie bardzo proste.</p>
+      <br />
+      <p>Rozważmy fragment sformułowania wariacyjnego, który będzie odpowiedzialny za macierz, a dokładniej rozważmy go tylko na pierwszym elemencie naszej dziedziny:</p>
+      <BlockMath math="\int_{0}^{1} w'v' \, dx"/>
+      <p>Aproksymujmy na tym elemencie naszą funkcję <InlineMath math="w(x)"/>. Będzie ona miała postać:</p>
+      <BlockMath math="w(x) = w_1 e_1(x) + w_2 e_2(x)"/>
+      <p>Dzieje się tak, ponieważ w każdym przedziale <InlineMath math="[x_i, x_{i+1}]"/> na wygląd funkcji <InlineMath math="w(x)"/> wpływ mają wyłącznie funkcje bazowe <InlineMath math="e_i"/> oraz <InlineMath math="e_{i+1}"/>. Dzięki temu możemy przekształcić ten fragment w następujący sposób:</p>
+      <BlockMath math="\int_{0}^{1} w'v' \, dx = \int_{0}^{1} [w_1 e_1(x) + w_2 e_2(x)]' \cdot v' \, dx = w_1 \int_{0}^{1} e_1'v' \, dx + w_2 \int_{0}^{1} e_2'v' \, dx"/>
+      <p>Z racji, że testujemy nasze rozwiązanie według metody Galerkina, dostajemy z tego elementu dwa równania:</p>
+      <BlockMath math="\begin{dcases}
+        v'(x) = e_1'(x) \Rightarrow \int_{0}^{1} w'v' \, dx = w_1 \int_{0}^{1} (e_1')^2 \, dx + w_2 \int_{0}^{1} e_1'e_2' \, dx \\[2ex]
+        v'(x) = e_2'(x) \Rightarrow \int_{0}^{1} w'v' \, dx = w_1 \int_{0}^{1} e_1'e_2' \, dx + w_2 \int_{0}^{1} (e_2')^2 \, dx
+      \end{dcases}"/>
+      <p>Teraz, możemy połączyć to z faktem, że pochodne funkcji liniowych <InlineMath math="e_i"/> to nachylenia prostych, a więc:</p>
+      <BlockMath math="\begin{dcases}
+        e_1'(x) = 1 \\[2ex]
+        e_2'(x) = -1
+      \end{dcases} \quad \Rightarrow \quad \begin{dcases}
+        w_1 \int_{0}^{1} (e_1')^2 \, dx + w_2 \int_{0}^{1} e_1'e_2' \, dx = w_1 - w_2 \\[2ex]
+        w_1 \int_{0}^{1} e_1'e_2' \, dx + w_2 \int_{0}^{1} (e_2')^2 \, dx = -w_1 + w_2
+      \end{dcases}"/>
+      <p>Dzięki temu możemy skonstruować lokalną macierz sztywności, która jest budulcem globalnej macierzy sztywności, czyli macierzy, którą poszukujemy. Wygląda ona tak:</p>
+      <BlockMath math="\mathbf{K^{1}} = 
+      \begin{bmatrix}
+      e_1'e_1' &e_1'e_2' \\
+      e_2'e_1' &e_2'e_2'
+      \end{bmatrix} = 
+      \begin{bmatrix}
+      1 &-1 \\
+      -1 &1
+      \end{bmatrix}"/>
+      <p>Jedynka w indeksie górnym oznacza, że jest to macierz dla pierwszego elementu skończonego. Jest to macierz lokalna, którą możemy rozszerzyć do globalnego wymiaru uzupełniając ją zerami. Dzięki temu otrzymamy jeden ze składników finalnej macierzy (<InlineMath math="G"/> w indeksie dolnym jest od słowa "global"):</p>
+      <BlockMath math="\mathbf{K_G^{1}} = 
+      \begin{bmatrix}
+      K^{1}_{00} &K^{1}_{01} &0 &0 \\
+      K^{1}_{10} &K^{1}_{11} &0 &0 \\
+      0 &0 &0 &0 \\
+      0 &0 &0 &0
+      \end{bmatrix}"/>
+      <p>Analogicznie wyprowadzamy składniki odpowiedzialne za element drugi oraz trzeci w naszym podziale dziedziny:</p>
+      <BlockMath math="\mathbf{K_G^{2}} = 
+      \begin{bmatrix}
+      0 &0 &0 &0 \\
+      0 &K^{2}_{11} &K^{2}_{12} &0 \\
+      0 &K^{2}_{21} &K^{2}_{22} &0 \\
+      0 &0 &0 &0
+      \end{bmatrix} \ , \quad \mathbf{K_G^{3}} =
+      \begin{bmatrix}
+      0 &0 &0 &0 \\
+      0 &0 &0 &0 \\
+      0 &0 &K^{3}_{22} &K^{3}_{23} \\
+      0 &0 &K^{3}_{32} &K^{3}_{33}
+      \end{bmatrix}
+      "/>
+      <p>Jeśli zsumujemy te macierze, otrzymujemy globalną macierz sztywności, która definiuje lewą stronę układu równań:</p>
+      <BlockMath math="\mathbf{K_G^{1}} + \mathbf{K_G^{2}} + \mathbf{K_G^{3}} = \begin{bmatrix}
+      K^{1}_{00} &K^{1}_{01} &0 &0 \\
+      K^{1}_{10} &(K^{1}_{11} + K^{2}_{11}) &0 \\
+      0 &K^{2}_{21} &(K^{2}_{22} + K^{3}_{22}) &0 \\
+      0 &0 &K^{3}_{32} &K^{3}_{33}
+      \end{bmatrix}
+      "/>
     </div>
   );
 }

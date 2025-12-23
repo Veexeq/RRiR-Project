@@ -1,17 +1,9 @@
 .wrapper {
-  /* NAPRAWA BŁĘDU 1: Musisz zdefiniować sztywną wysokość lub min-height */
   height: 400px; 
   width: 100%;
-
-  /* NAPRAWA BŁĘDU 2: Białe tło */
   background-color: #ffffff;
-  
-  /* Opcjonalnie: ramka lub cień, żeby wykres odcinał się od reszty strony */
   border-radius: 8px;
-  /* box-shadow: 0 4px 12px rgba(0,0,0,0.05); */
-  
-  /* Centrowanie, jeśli potrzebne */
   margin: 20px 0;
-  padding: 10px; /* Mały padding wewnątrz, żeby osie nie dotykały krawędzi */
+  padding: 10px;
   box-sizing: border-box;
 }
