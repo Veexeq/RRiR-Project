@@ -1,6 +1,7 @@
 :root {
   --accent-line: #534B52;
-  --side-margin: 25rem;
+  --bg-ui: #E0DDCF;
+  --side-margin: 25%;
 }
 
 .wrapper {
@@ -8,4 +9,12 @@
   flex: 1;
   flex-flow: column nowrap;
   margin: 1rem var(--side-margin);
+}
+
+.highlight {
+  background-color: var(--bg-ui);
+  padding: 0.5rem;
+  border: var(--accent-line) 1px solid;
+  border-radius: 5px;
+  text-align: center;
 }
