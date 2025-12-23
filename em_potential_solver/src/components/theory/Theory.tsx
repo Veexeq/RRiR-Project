@@ -9,7 +9,7 @@ function Theory() {
       <br />
       <p>W tej sekcji znajduje się kompletny wstęp związany z teorią, który potrzebny jest do rozpoczęcia pracy nad znajdowaniem numerycznego rozwiązania problemu. Można go podzielić na następujące części:</p>
       <ul>
-        <li>Treść problemu</li>
+        <li><a href="#intro">Treść problemu</a></li>
         <li>Opracowanie warunków brzegowych</li>
         <li>Wyprowadzenie sformułowania wariacyjnego</li>
         <li>Dyskretyzacja</li>

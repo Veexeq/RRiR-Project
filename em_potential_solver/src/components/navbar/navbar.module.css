@@ -20,7 +20,7 @@
   border-radius: 0 0 5px 5px; */
 }
 
-a {
+.wrapper a {
   background-color: var(--bg-ui);
   padding: 1rem;
   min-width: 20%;
@@ -35,7 +35,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+.wrapper a:hover {
   background-color: var(--bg-ui-hover);
   font-weight: bold;
 }
