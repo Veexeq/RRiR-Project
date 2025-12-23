@@ -18,12 +18,12 @@ function Theory() {
       <br/>
       <h2>Wstęp teoretyczny</h2>
       <br />
-      <p>W tej sekcji znajduje się kompletny wstęp związany z teorią, który potrzebny jest do rozpoczęcia pracy nad znajdowaniem numerycznego rozwiązania problemu. Można go podzielić na następujące części:</p>
+      <p>W tej sekcji znajduje się kompletny wstęp związany z teorią, który potrzebny jest do rozpoczęcia pracy nad znajdowaniem numerycznego rozwiązania problemu przy użyciu <b>Metody Elementów Skończonych</b> (MES). Można go podzielić na następujące części:</p>
       <ul>
         <li><a href="#" onClick={scrollToSection("intro")}>Treść problemu</a></li>
         <li><a href="#" onClick={scrollToSection("boundary-conditions")}>Opracowanie warunków brzegowych</a></li>
         <li><a href="#" onClick={scrollToSection("weak-form")}>Wyprowadzenie sformułowania wariacyjnego</a></li>
-        <li>Dyskretyzacja</li>
+        <li><a href="#" onClick={scrollToSection("discrete")}>Dyskretyzacja</a></li>
         <li>Wyprowadzenie układu równań</li>
       </ul>
       <br />
@@ -32,7 +32,7 @@ function Theory() {
       <br />
       <p>Zagadnienie, które mamy rozwiązać przy użyciu MES to równanie opisujące potencjał elektromagnetyczny:</p>
       <BlockMath math="\frac{d^2\phi}{dx^2}=-\frac{\rho}{\epsilon_r(x)}"/>
-      <p>Do tego równania mamy również podane warunki brzegowe:</p>
+      <p>Do tego równania mamy podane warunki brzegowe:</p>
       <BlockMath math="\begin{cases} \phi'(0)+\phi(0) = 5 \\ \phi(3) = 2 \end{cases}" />
       <p>A także zdefiniowaną stałą funkcję gęstości wraz z funkcją przenikalności elektrycznej, która jest stała przedziałami:</p>
       <BlockMath math="\rho=1,\qquad \epsilon_r(x)=\begin{cases} 
@@ -44,7 +44,7 @@ function Theory() {
 
       <h3 id="boundary-conditions">Opracowanie warunków brzegowych</h3>
       <br />
-      <p>W powyższym problemie występują dwa warunki brzegowe, które musimy wziąć pod uwagę. Pierwszy z nich to tzw. <b>warunek Robina</b>. Obsługujemy go poprzez wyliczenie wartości funkcji <InlineMath math="\phi'(0)"/>, gdyż pojawi się ona w sformułowaniu słabym równania:</p>
+      <p>W powyższym problemie występują dwa warunki brzegowe, które musimy rozważyć. Pierwszy z nich to tzw. <b>warunek Robina</b>. Obsługujemy go poprzez wyliczenie wartości funkcji <InlineMath math="\phi'(0)"/>, gdyż pojawi się ona w sformułowaniu słabym równania:</p>
       <BlockMath math="\phi'(0)+\phi(0) = 5 \ \Rightarrow \ \phi'(0) = 5 - \phi(0)" />
       <p>Drugim warunkiem jest tzw. <b>warunek Dirichleta</b>. W naszym przypadku występuje on w postaci niezerowej (po prawej stronie równania nie ma zera), co jest problematyczne, ponieważ zbiór funkcji, których wartości na brzegu dziedziny są równe zeru nie generują podprzestrzeni liniowej. My natomiast potrzebujemy uzyskać liniowość ze względu na późniejsze obliczenia na macierzach.</p>
       <br />
@@ -130,6 +130,11 @@ function Theory() {
         </p>
       </div><br />
       <p><b>Uwaga</b>: warunek brzegowy Robina "wbudowany" jest w sformułowanie wariacyjne, nie wymuszamy go w osobnym równaniu.</p>
+
+      <br />
+      <h3 id="discrete">Dyskretyzacja</h3>
+      <br />
+      <p></p>
     </div>
   );
 }
