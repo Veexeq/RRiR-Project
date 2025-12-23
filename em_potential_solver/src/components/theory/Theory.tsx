@@ -134,7 +134,19 @@ function Theory() {
       <br />
       <h3 id="discrete">Dyskretyzacja</h3>
       <br />
-      <p></p>
+      <p>Dyskretyzacją nazywamy proces zmiany całkowania, będącego ciągłą operacją, na sumę skończenie wielu elementów. W sformułowaniu wariacyjnym mamy do czynienia z całką z nieznanej funkcji <InlineMath math="w"/>, którą będziemy teraz przybliżać.</p>
+      <br />
+      <p>Podzielmy naszą dziedzinę na <InlineMath math="n"/> skończonych elemetów. W efekcie tego dostajemy <InlineMath math="n"/> przedziałów, które ustalają <InlineMath math="n+1"/> węzłów:</p>
+      <BlockMath math="\Omega = \bigcup_{i=1}^{n} \, [x_i, \, x_{i+1}] \quad gdzie \quad [x_i, \, x_{i+1}] = \left[ \tfrac{i-1}{n}, \, \tfrac{i}{n} \right]"/>
+      <p>Ważną obserwacją jest to, że brzegi tych przedziałów na siebie nachodzą. Będzie to miało istotną konsekwencję w macierzy, którą będziemy teraz budować.</p>
+      <br />
+      <p>Teraz, wprowadziwszy podział dziedziny, możemy wprowadzić aproksymację naszej poszukiwanej funkcji <InlineMath math="w"/>. Będzie ona miała następującą postać:</p>
+      <BlockMath math="w(x) = \sum_{i = 1}^{n + 1} w_i \cdot e_i(x)"/>
+      <p>Użyte wyżej funkcje <InlineMath math="e_i(x)"/> to tak zwane funkcje bazowe, natomiast liczba <InlineMath math="w_i"/> to wartość poszukiwanej funkcji <InlineMath math="w(x)"/> w <InlineMath math="i"/>-tym węźle. Liczby te nazywamy również wagami, gdyż określają wagę danej funkcji bazowej w danej kombinacji liniowej.</p>
+      <br />
+      <p>Funkcje bazowe nie są tutaj dowolne, mają szczególną postać. W przypadku jednowymiarowym, jako funkcje bazowe stosujemy tzw. <b>funkcje daszkowe</b>. Funkcja daszkowa <InlineMath math="e_i(x)"/> w <InlineMath math="i"/>-tym węźle przyjmuje wartość <InlineMath math="1"/>, spada do <InlineMath math="0"/> w sąsiednich węzłach, a następnie jest funkcją stałą równą <InlineMath math="0"/>.</p>
+      <br />
+      <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
     </div>
   );
 }
