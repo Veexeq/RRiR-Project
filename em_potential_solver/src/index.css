@@ -119,6 +119,11 @@ label, button {
   font-family: inherit;
 }
 
+.katex {
+  font-size: 1.1em;
+  color: var(--text-primary);
+}
+
 /* === Scrollbar stylization === */
 
 /* Webkit (Chrome, Edge, Safari, Opera) */
