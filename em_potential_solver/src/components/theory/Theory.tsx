@@ -1,5 +1,6 @@
 import { BlockMath, InlineMath } from 'react-katex';
 import styles from './theory.module.css'
+import HatFunctionsChart from '../ui/HatFunctionsChart';
 
 function Theory() {
 
@@ -147,6 +148,8 @@ function Theory() {
       <p>Funkcje bazowe nie są tutaj dowolne, mają szczególną postać. W przypadku jednowymiarowym, jako funkcje bazowe stosujemy tzw. <b>funkcje daszkowe</b>. Funkcja daszkowa <InlineMath math="e_i(x)"/> w <InlineMath math="i"/>-tym węźle przyjmuje wartość <InlineMath math="1"/>, spada do <InlineMath math="0"/> w sąsiednich węzłach, a następnie jest funkcją stałą równą <InlineMath math="0"/>.</p>
       <br />
       <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
+      <br />
+      <HatFunctionsChart />
     </div>
   );
 }
