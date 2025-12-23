@@ -149,6 +149,9 @@ function Theory() {
       <br />
       <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
       <HatFunctionsChart />
+      <br />
+      <h4>Budowanie macierzy sztywności</h4>
+      <br />
       <p>Teraz możemy połączyć przygotowane wcześniej sformułowanie wariacyjne wraz z aproksymacją funkcji <InlineMath math="w"/> w jedną całość. Zrobimy to korzystając z tzw. <b>metody Galerkina</b>, która w uproszczeniu mówi, że będziemy testować nasze rozwiązanie tym samym, czym je budujemy. Oznacza to, że nasza funkcja testująca <InlineMath math="v(x)"/> ze sformułowania wariacyjnego przyjmie postać <InlineMath math="e_i"/>, co wygeneruje nam <InlineMath math="n+1"/> równań liniowych, które ubierzemy w macierz.</p>
       <br />
       <p>Spróbujmy stworzyć macierz, wpierw kontynuując prosty przykład, który rozpoczęliśmy powyżej, ponieważ uogólnienie na większą liczbę <InlineMath math="n"/> będzie bardzo proste.</p>
@@ -206,7 +209,7 @@ function Theory() {
       \end{bmatrix}
       "/>
       <p>Jeśli zsumujemy te macierze, otrzymujemy globalną macierz sztywności, która definiuje lewą stronę układu równań:</p>
-      <BlockMath math="\mathbf{K_G^{1}} + \mathbf{K_G^{2}} + \mathbf{K_G^{3}} = \begin{bmatrix}
+      <BlockMath math="\mathbf{K_G} = \mathbf{K_G^{1}} + \mathbf{K_G^{2}} + \mathbf{K_G^{3}} = \begin{bmatrix}
       K^{1}_{00} &K^{1}_{01} &0 &0 \\
       K^{1}_{10} &(K^{1}_{11} + K^{2}_{11}) &0 \\
       0 &K^{2}_{21} &(K^{2}_{22} + K^{3}_{22}) &0 \\

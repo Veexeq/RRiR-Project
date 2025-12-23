@@ -24,6 +24,9 @@
   
   --font-size-h3: 1.5rem;
   --line-height-h3: 1.35;
+
+  --font-size-h4: 1.3rem;
+  --line-height-h4: 1.35;
   
   --font-size-lead: 1.25rem;
   
@@ -67,7 +70,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, p, ul, li, label, button {
+h1, h2, h3, h4, p, ul, li, label, button {
   margin: 0;
 }
 
@@ -91,6 +94,14 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
+  color: var(--text-primary);
+  /* margin-bottom: 16px; */
+  font-weight: 500;
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
   color: var(--text-primary);
   /* margin-bottom: 16px; */
   font-weight: 500;
