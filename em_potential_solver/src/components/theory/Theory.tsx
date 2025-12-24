@@ -25,7 +25,8 @@ function Theory() {
         <li><a href="#" onClick={scrollToSection("boundary-conditions")}>Opracowanie warunków brzegowych</a></li>
         <li><a href="#" onClick={scrollToSection("weak-form")}>Wyprowadzenie sformułowania wariacyjnego</a></li>
         <li><a href="#" onClick={scrollToSection("discrete")}>Dyskretyzacja</a></li>
-        <li>Wyprowadzenie układu równań</li>
+        <li>Metoda eliminacji Gaussa</li>
+        <li>Kwadratury Gauss-Legendre</li>
       </ul>
       <br />
 
@@ -291,8 +292,92 @@ function Theory() {
       <p>Na ten moment udało nam się przejść z sformułowania wariacyjnego do układu równań liniowych w postaci równania macierzowego, lecz nie uwzględniliśmy przy tym warunków brzegowych.</p>
       <br />
       <p>Na ten moment wykonaliśmy takie przekształcenie:</p>
-      <BlockMath math=""/>
-      <BlockMath math=""/>
+      <BlockMath math="
+        \int_{0}^{3} w'v' \, dx = \int_{0}^{3} \frac{\rho} {\epsilon_r} v\, dx \quad \Rightarrow \quad
+        \begin{bmatrix}
+        1 &-1 &0 &0 \\
+        -1 &2 &-1 &0 \\
+        0 &-1 &2 &-1 \\
+        0 &0 &-1 &1 
+        \end{bmatrix}
+        \begin{bmatrix}
+        w_1 \\
+        w_2 \\
+        w_3 \\
+        w_4
+        \end{bmatrix} = 
+        \begin{bmatrix} 
+        0.05 \\
+        0.15 \\
+        0.60 \\
+        0.50
+        \end{bmatrix}
+      " />
+    <p>Nasze sformułowanie wariacyjne wyglądało jednak w taki sposób:</p>
+    <BlockMath math="\int_{0}^{3} w'v' \, dx - v(0)w(0) = \int_{0}^{3} \frac{\rho} {\epsilon_r} v \, dx - \frac{13}{3} v(0)"/>
+    <p>Aby uwzględnić warunek brzegowy Robina zawarty w powyższym sformułowaniu wariacyjnym, zauważmy, że jest on uzależniony od wartości funkcji testującej <InlineMath math="v"/> w punkcie <InlineMath math="x=0"/>. Każda z naszych funkcji bazowych, oprócz <InlineMath math="e_1(x)"/>, która ma w pierwszym węźle wartość <InlineMath math="1"/>, zeruje się w tym punkcie. Oznacza to, że ten warunek będzie miał wpływ wyłącznie na pierwsze równanie, a więc pierwszy wiersz macierzy. Ponadto, wiemy, że <InlineMath math="w(0)=w_1"/>, gdyż jest to po prostu wartość w pierwszym węźle.</p>
+    <br />
+    <p>Podsumowując, aby uwzględnić warunek brzegowy Robina, należy zmodyfikować nasze równanie macierzowe w następujący sposób:</p>
+    <BlockMath math="
+      \begin{bmatrix}
+      1 &-1 &0 &0 \\
+      -1 &2 &-1 &0 \\
+      0 &-1 &2 &-1 \\
+      0 &0 &-1 &1 
+      \end{bmatrix}
+      \begin{bmatrix}
+      w_1 \\
+      w_2 \\
+      w_3 \\
+      w_4
+      \end{bmatrix} + 
+      \begin{bmatrix}
+        -1 &0 &0 &0 \\
+        0 &0 &0 &0 \\
+        0 &0 &0 &0 \\
+        0 &0 &0 &0
+      \end{bmatrix}
+      \begin{bmatrix}
+        w_1 \\
+        w_2 \\
+        w_3 \\
+        w_4 \\
+      \end{bmatrix} = 
+      \begin{bmatrix} 
+      0.05 \\
+      0.15 \\
+      0.60 \\
+      0.50
+      \end{bmatrix} - 
+      \begin{bmatrix} 
+      4.33 \\
+      0.00 \\
+      0.00 \\
+      0.00
+      \end{bmatrix}
+    "/>
+    <p>Ponadto, możemy uwzględnić warunek brzegowy Dirichleta, który wyeliminuje nam cały ostatni rząd z układu równań, gdyż mówi on bezpośrednio o wartości funkcji <InlineMath math="w"/> w punkcie <InlineMath math="x = 3"/>. Łącząc wszystko, otrzymujemy poniższe równanie macierzowe:</p>
+    <BlockMath math="
+      \begin{bmatrix}
+      0 &-1 &0 &0 \\
+      -1 &2 &-1 &0 \\
+      0 &-1 &2 &-1 \\
+      0 &0 &0 &1 
+      \end{bmatrix}
+      \begin{bmatrix}
+      w_1 \\
+      w_2 \\
+      w_3 \\
+      w_4
+      \end{bmatrix} = \begin{bmatrix} 
+      -4.28 \\
+      0.15 \\
+      0.60 \\
+      0
+      \end{bmatrix}
+    "/>
+    <br />
+    <p>Uogólnienie tego równania na dowolną liczbę elementów skończonych jest bardzo proste dzięki wyprowadzonym ogólnym wzorom na <InlineMath math="\mathbf{K_G}"/> oraz <InlineMath math="\mathbf{F_G}"/>.</p>
     </div>
   );
 }
