@@ -216,6 +216,83 @@ function Theory() {
       0 &0 &K^{3}_{32} &K^{3}_{33}
       \end{bmatrix}
       "/>
+      <p>Globalny wzór na ogólną (nieuwzględniającą warunków brzegowych Robina) macierz sztywności zbudowaną przy użyciu funkcji daszkowych oraz trzech elementów skończonych o długości <InlineMath math="h"/> to:</p>
+      <BlockMath math="\mathbf{K_G} = \frac{1}{h}
+      \begin{bmatrix}
+      1 &-1 &0 &0 \\
+      -1 &2 &-1 &0 \\
+      0 &-1 &2 &-1 \\
+      0 &0 &-1 &1 
+      \end{bmatrix} = 
+      \begin{bmatrix}
+      1 &-1 &0 &0 \\
+      -1 &2 &-1 &0 \\
+      0 &-1 &2 &-1 \\
+      0 &0 &-1 &1 
+      \end{bmatrix}
+      "/>
+      <p>Podział na większą liczbę elementów skończonych zwiększy wymiar, lecz forma tej macierzy pozostanie taka sama. Łatwo można ją zapamiętać dzięki liniowym funkcjom bazowym degenerującym się do stałych przy różniczkowaniu.</p>
+      <br />
+      <h4>Budowanie wektora sił</h4>
+      <br />
+      <p>Spróbujmy analogicznie do macierzy szytywności zbudować tzw. wektor sił, który stanowi budulec prawej strony równania. Ponownie, zacznijmy od jednego elementu skończonego, rozważmy prawą stronę sformułowania wariacyjnego:</p>
+      <BlockMath math="\int_{0}^{1} \frac{\rho}{\epsilon_r} v \, dx"/>
+      <p>Ponownie użyjemy <b>metody Garkina</b>, więc testować ten człon będziemy przy użyciu funkcji bazowych, które znamy już z poprzednich części artykułu. Przypomnijmy, dla pierwszego elementu wynoszą one:</p>
+      <BlockMath math="\begin{dcases} 
+      e_1(x) = x \\
+      e_2(x) = 1-x
+      \end{dcases}"/>
+      <p>Podstawiając je za funkcję testującą otrzymujemy dwa równania. Pamiętajmy również o tym, że treść zadania zdefiniowała nam funkcje <InlineMath math="\rho(x) = 1"/> oraz <InlineMath math="\epsilon_r(x) = 10"/>. Łącząc to wszystko dostajemy:</p>
+      <BlockMath math="\begin{dcases}
+        v(x) = e_1(x) = x \Rightarrow \int_{0}^{1} \frac{\rho}{\epsilon_r} v \, dx = \frac{1}{10}\int_{0}^{1} x \, dx \\[2ex]
+        v(x) = e_2(x) = 1 - x \Rightarrow \int_{0}^{1} \frac{\rho}{\epsilon_r} v \, dx = \frac{1}{10}\int_{0}^{1} (1-x) \, dx
+      \end{dcases}"/>
+      <p>Możemy zauważyć, że dla dowolnego elementu skończonego całka z funkcji bazowej, będącej funkcją testującą, zawsze wynosi <InlineMath math="\frac{h}{2}"/>, gdzie <InlineMath math="h"/> jest długością elementu. Dzieje się tak, ponieważ funkcje daszkowe tworzą trójąty prostokątne dla danego elementu, a licząc całkę oznaczoną liczymy pole powierzchni tych trójkątów.</p>
+      <br />
+      <p>Zanim przejdziemy do konstrukcji wektora sił, zbierzmy powyższe obserwacje w jeden, ogólny wzór. Dla danego, <InlineMath math="i"/>-tego elementu skończonego, lokalny wektor sił, który generuje ten element, opisywany jest wzorem:</p>
+      <BlockMath math="\mathbf{F^1} = \frac{\rho}{\epsilon_r} \cdot \frac{h}{2} \cdot 
+      \begin{bmatrix}
+      1 \\
+      1
+      \end{bmatrix}"/>
+      <p>Teraz, analogicznie, możemy rozszerzyć go do globalnego wymiaru wektora sił:</p>
+      <BlockMath math="\mathbf{F^1_G} = \frac{h}{2} \cdot 
+      \begin{bmatrix}
+      \mathbf{F^1_0} \\
+      \mathbf{F^1_1} \\
+      0 \\
+      0
+      \end{bmatrix}, \qquad \mathbf{F^1_i} = \frac{\rho(i)}{\epsilon_r(i)} \in \left\{\frac{1}{10}, \frac{1}{5}, 1\right\}
+      "/>
+      <p>Teraz pozostaje nam już tylko zsumować wszystkie elementy skończone i uzyskać globalny (nieuwzględniający warunku Robina) wektor sił:</p>
+      <BlockMath math="\mathbf{F_G} = \frac{h}{2}
+      \begin{bmatrix}
+      \mathbf{F^1_0} \\
+      \mathbf{F^1_1} + \mathbf{F^2_1} \\
+      \mathbf{F^2_2} + \mathbf{F^3_2} \\
+      \mathbf{F^3_2}
+      \end{bmatrix} = \frac{1}{2}
+      \begin{bmatrix} 
+      0.1 \\
+      0.1 + 0.2 \\
+      0.2 + 1 \\
+      1
+      \end{bmatrix} = 
+      \begin{bmatrix} 
+      0.05 \\
+      0.15 \\
+      0.60 \\
+      0.50
+      \end{bmatrix}
+      "/>
+      <br />
+      <h4>Uwzględnienie warunków brzegowych</h4>
+      <br />
+      <p>Na ten moment udało nam się przejść z sformułowania wariacyjnego do układu równań liniowych w postaci równania macierzowego, lecz nie uwzględniliśmy przy tym warunków brzegowych.</p>
+      <br />
+      <p>Na ten moment wykonaliśmy takie przekształcenie:</p>
+      <BlockMath math=""/>
+      <BlockMath math=""/>
     </div>
   );
 }
