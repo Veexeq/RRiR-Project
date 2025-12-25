@@ -7,8 +7,8 @@ function GaussElimination() {
       <br />
       <p>
         Ta sekcja poświęcona jest omówieniu implementacji metody eliminacji Gaussa, 
-        której użyjemy, aby rozwiązać nasze wyprowadzone wyżej równanie macierzowe: 
-        <InlineMath math="\mathbf{K_G} \cdot \mathbf{w} = \mathbf{F_G}"/>
+        której użyjemy, aby rozwiązać nasze wyprowadzone wyżej równanie 
+        macierzowe: <InlineMath math="\mathbf{K_G} \cdot \mathbf{w} = \mathbf{F_G}"/>
       </p>
       <br />
       <p>
@@ -25,8 +25,8 @@ function GaussElimination() {
       "/>
       <p>
         Zajmować się będziemy kolejno kolumnami. Dla każdej kolumny musimy znaleźć tzw. pivot, 
-        który posiada największą wartość bezwględną w danej kolumnie. W kolumnie 
-        <InlineMath math="0"/> będzie to <InlineMath math="-1"/>. Mając pivot, zamieniamy wiersze 
+        który posiada największą wartość bezwględną w danej kolumnie. W 
+        kolumnie <InlineMath math="0"/> będzie to <InlineMath math="-1"/>. Mając pivot, zamieniamy wiersze 
         w taki sposób, aby wylądował on na przekątnej głównej macierzy sztywności, a następnie 
         zerujemy tym pivotem wszystkie poniższe elementy w aktualnej kolumnie:
       </p>

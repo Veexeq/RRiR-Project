@@ -8,8 +8,8 @@ function Discrete() {
       <br />
       <p>
         Dyskretyzacją nazywamy proces zmiany całkowania, będącego ciągłą operacją, na sumę skończenie 
-        wielu elementów. W sformułowaniu wariacyjnym mamy do czynienia z całką z nieznanej funkcji 
-        <InlineMath math="w"/>, którą będziemy teraz przybliżać.
+        wielu elementów. W sformułowaniu wariacyjnym mamy do czynienia z całką z nieznanej 
+        funkcji <InlineMath math="w"/>, którą będziemy teraz przybliżać.
       </p>
       <br />
       <p>
@@ -34,17 +34,17 @@ function Discrete() {
       "/>
       <p>
         Użyte wyżej funkcje <InlineMath math="e_i(x)"/> to tak zwane funkcje 
-        bazowe, natomiast liczba <InlineMath math="w_i"/> to wartość poszukiwanej funkcji 
-        <InlineMath math="w(x)"/> w <InlineMath math="i"/>-tym węźle. Liczby te nazywamy 
+        bazowe, natomiast liczba <InlineMath math="w_i"/> to wartość poszukiwanej 
+        funkcji <InlineMath math="w(x)"/> w <InlineMath math="i"/>-tym węźle. Liczby te nazywamy 
         również wagami, gdyż określają wagę danej funkcji bazowej w danej kombinacji liniowej.
       </p>
       <br />
       <p>
         Funkcje bazowe nie są tutaj dowolne, mają szczególną postać. W przypadku jednowymiarowym, 
-        jako funkcje bazowe stosujemy tzw. <b>funkcje daszkowe</b>. Funkcja daszkowa 
-        <InlineMath math="e_i(x)"/> w <InlineMath math="i"/>-tym węźle przyjmuje wartość <InlineMath math="1"/>, 
-        spada do <InlineMath math="0"/> w sąsiednich węzłach, a następnie jest funkcją stałą równą 
-        <InlineMath math="0"/>.
+        jako funkcje bazowe stosujemy tzw. <b>funkcje daszkowe</b>. Funkcja 
+        daszkowa <InlineMath math="e_i(x)"/> w <InlineMath math="i"/>-tym węźle przyjmuje 
+        wartość <InlineMath math="1"/>, spada do <InlineMath math="0"/> w sąsiednich węzłach, a następnie 
+        jest funkcją stałą równą <InlineMath math="0"/>.
       </p>
       <br />
       <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
@@ -53,11 +53,11 @@ function Discrete() {
       <h4>Budowanie macierzy sztywności</h4>
       <br />
       <p>
-        Teraz możemy połączyć przygotowane wcześniej sformułowanie wariacyjne wraz z aproksymacją funkcji 
-        <InlineMath math="w"/> w jedną całość. Zrobimy to korzystając z tzw. <b>metody Galerkina</b>, 
+        Teraz możemy połączyć przygotowane wcześniej sformułowanie wariacyjne wraz z aproksymacją 
+        funkcji <InlineMath math="w"/> w jedną całość. Zrobimy to korzystając z tzw. <b>metody Galerkina</b>, 
         która w uproszczeniu mówi, że będziemy testować nasze rozwiązanie tym samym, czym je budujemy. 
-        Oznacza to, że nasza funkcja testująca <InlineMath math="v(x)"/> ze sformułowania wariacyjnego przyjmie postać 
-        <InlineMath math="e_i"/>, co wygeneruje nam <InlineMath math="n+1"/> równań liniowych, 
+        Oznacza to, że nasza funkcja testująca <InlineMath math="v(x)"/> ze sformułowania wariacyjnego 
+        przyjmie postać <InlineMath math="e_i"/>, co wygeneruje nam <InlineMath math="n+1"/> równań liniowych, 
         które ubierzemy w macierz.
       </p>
       <br />
@@ -78,9 +78,9 @@ function Discrete() {
         w(x) = w_1 e_1(x) + w_2 e_2(x)
       "/>
       <p>
-        Dzieje się tak, ponieważ w każdym przedziale <InlineMath math="[x_i, x_{i+1}]"/> na wygląd funkcji 
-        <InlineMath math="w(x)"/> wpływ mają wyłącznie funkcje bazowe <InlineMath math="e_i"/> oraz 
-        <InlineMath math="e_{i+1}"/>. Dzięki temu możemy przekształcić ten fragment w następujący sposób:
+        Dzieje się tak, ponieważ w każdym przedziale <InlineMath math="[x_i, x_{i+1}]"/> na wygląd 
+        funkcji <InlineMath math="w(x)"/> wpływ mają wyłącznie funkcje bazowe <InlineMath math="e_i"/> 
+        oraz <InlineMath math="e_{i+1}"/>. Dzięki temu możemy przekształcić ten fragment w następujący sposób:
       </p>
       <BlockMath math="
         \int_{0}^{1} w'v' \, dx = \int_{0}^{1} [w_1 e_1(x) + w_2 e_2(x)]' \cdot v' \, dx = 
@@ -97,8 +97,8 @@ function Discrete() {
         \end{dcases}
       "/>
       <p>
-        Teraz, możemy połączyć to z faktem, że pochodne funkcji liniowych 
-        <InlineMath math="e_i"/> to nachylenia prostych, a więc:
+        Teraz, możemy połączyć to z faktem, że pochodne funkcji 
+        liniowych <InlineMath math="e_i"/> to nachylenia prostych, a więc:
       </p>
       <BlockMath math="
         \begin{dcases}
@@ -324,8 +324,8 @@ function Discrete() {
     <p>
       Aby uwzględnić warunek brzegowy Robina zawarty w powyższym sformułowaniu wariacyjnym, 
       zauważmy, że jest on uzależniony od wartości funkcji testującej <InlineMath math="v"/> 
-      w punkcie <InlineMath math="x=0"/>. Każda z naszych funkcji bazowych, oprócz 
-      <InlineMath math="e_1(x)"/>, która ma w pierwszym węźle wartość <InlineMath math="1"/>, 
+      w punkcie <InlineMath math="x=0"/>. Każda z naszych funkcji bazowych, 
+      oprócz <InlineMath math="e_1(x)"/>, która ma w pierwszym węźle wartość <InlineMath math="1"/>, 
       zeruje się w tym punkcie. Oznacza to, że ten warunek będzie miał wpływ wyłącznie na pierwsze równanie, 
       a więc pierwszy wiersz macierzy. Ponadto, wiemy, że <InlineMath math="w(0)=w_1"/>, gdyż jest to po prostu 
       wartość w pierwszym węźle.
@@ -374,8 +374,8 @@ function Discrete() {
       \end{bmatrix}
     "/>
     <p>Ponadto, możemy uwzględnić warunek brzegowy Dirichleta, który wyeliminuje nam cały 
-      ostatni rząd z układu równań, gdyż mówi on bezpośrednio o wartości funkcji 
-      <InlineMath math="w"/> w punkcie <InlineMath math="x = 3"/>. Łącząc wszystko, 
+      ostatni rząd z układu równań, gdyż mówi on bezpośrednio o wartości 
+      funkcji <InlineMath math="w"/> w punkcie <InlineMath math="x = 3"/>. Łącząc wszystko, 
       otrzymujemy poniższe równanie macierzowe:
     </p>
     <BlockMath math="
@@ -400,8 +400,8 @@ function Discrete() {
     <br />
     <p>
       Uogólnienie tego równania na dowolną liczbę elementów skończonych jest bardzo proste 
-      dzięki wyprowadzonym ogólnym wzorom na <InlineMath math="\mathbf{K_G}"/> oraz 
-      <InlineMath math="\mathbf{F_G}"/>.
+      dzięki wyprowadzonym ogólnym wzorom na <InlineMath math="\mathbf{K_G}"/> 
+      oraz <InlineMath math="\mathbf{F_G}"/>.
     </p>
     <br/>
     </>

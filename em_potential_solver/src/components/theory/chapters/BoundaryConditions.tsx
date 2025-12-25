@@ -30,8 +30,8 @@ function BoundaryConditions() {
     "/> 
     <p>
       Funkcja <InlineMath math="w"/> jest naszą nową funkcją, której będziemy poszukiwali. Zeruje się ona na 
-      brzegach <InlineMath math="\Omega" />. Aby do tego doprowadzić, musimy zdefiniować odpowiednio naszą funkcję 
-      <InlineMath math="\widehat{\phi}(x)"/>, co możemy zrobić w następujący sposób:
+      brzegach <InlineMath math="\Omega" />. Aby do tego doprowadzić, musimy zdefiniować odpowiednio naszą 
+      funkcję <InlineMath math="\widehat{\phi}(x)"/>, co możemy zrobić w następujący sposób:
     </p>
     <BlockMath math="
       \widehat{\phi}(0)=0 \land \widehat{\phi}(3)=2 \ \Rightarrow \ \widehat{\phi}(x)=\frac{2}{3}x" />
