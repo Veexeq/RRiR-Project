@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css'
+import { memo } from 'react';
 
 function Navbar() {
   return (
@@ -12,4 +13,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);

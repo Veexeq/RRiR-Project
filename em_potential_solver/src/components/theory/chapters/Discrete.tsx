@@ -1,5 +1,6 @@
 import { BlockMath, InlineMath } from "react-katex";
 import HatFunctionsChart from "../../ui/HatFunctionsChart";
+import { memo } from "react";
 
 function Discrete() {
   return (
@@ -408,4 +409,4 @@ function Discrete() {
   );
 }
 
-export default Discrete;
+export default memo(Discrete);

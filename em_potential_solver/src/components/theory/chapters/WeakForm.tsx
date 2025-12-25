@@ -1,5 +1,6 @@
 import { BlockMath, InlineMath } from "react-katex";
 import styles from './../theory.module.css'
+import { memo } from "react";
 
 function WeakForm() {
   return (
@@ -126,4 +127,4 @@ function WeakForm() {
   );
 }
 
-export default WeakForm;
+export default memo(WeakForm);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './homepage.module.css'
 
 function Homepage() {
@@ -18,4 +19,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default memo(Homepage);

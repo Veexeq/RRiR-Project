@@ -1,11 +1,10 @@
-// import { BlockMath, InlineMath } from 'react-katex';
+import { memo } from 'react';
 import BoundaryConditions from './chapters/BoundaryConditions';
 import Discrete from './chapters/Discrete';
 import GaussElimination from './chapters/GaussElimination';
-import Intro from './chapters/intro';
+import Intro from './chapters/Intro';
 import WeakForm from './chapters/WeakForm';
 import styles from './theory.module.css'
-// import HatFunctionsChart from '../ui/HatFunctionsChart';
 
 function Theory() {
 
@@ -43,4 +42,4 @@ function Theory() {
   );
 }
 
-export default Theory;
+export default memo(Theory);

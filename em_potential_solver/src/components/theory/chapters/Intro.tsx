@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 
 function Intro() {
@@ -27,4 +28,4 @@ function Intro() {
   );
 }
 
-export default Intro;
+export default memo(Intro);

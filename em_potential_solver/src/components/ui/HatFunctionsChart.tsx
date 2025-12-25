@@ -1,5 +1,6 @@
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './hatfunctionchart.module.css';
+import { memo } from 'react';
 
 interface I_xVals {
   x: number,
@@ -101,4 +102,4 @@ function HatFunctionsChart() {
   );
 }
 
-export default HatFunctionsChart;
+export default memo(HatFunctionsChart);

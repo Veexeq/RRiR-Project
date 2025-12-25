@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 
 function BoundaryConditions() {
@@ -49,4 +50,4 @@ function BoundaryConditions() {
  );
 }
 
-export default BoundaryConditions;
+export default memo(BoundaryConditions);

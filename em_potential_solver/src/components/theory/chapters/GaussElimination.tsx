@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 
 function GaussElimination() {
@@ -106,4 +107,4 @@ function GaussElimination() {
   );
 }
 
-export default GaussElimination;
+export default memo(GaussElimination);
