@@ -69,6 +69,39 @@ function GaussElimination() {
         modyfikujemy powyższej postaci, co oznacza, że jest ona macierzą trójkątną górną, oraz stanowi ona efekt 
         wykonania etapu pierwszego.
       </p>
+      <br />
+      <p>
+        Etap drugi polega na obliczeniu wartości <InlineMath math="w_i"/> poprzez rozwiązywanie równań
+        zaczynając od ostatniego. Idea algorytmu polega na tym, aby zapisywać w wektorze wartości, które
+        już znamy, co wystarczy do obliczenia kolejnej wartości. Najłatwiej zrobić to na przykładzie, lecz żeby
+        nie rozpisywać się przesadnie, zobaczmy tylko ostatni krok, czyli wyliczanie <InlineMath math="w_1"/>: 
+      </p>
+      <BlockMath math="
+        w = 
+        \begin{bmatrix}
+          0 &4.28 &2.88 &0
+        \end{bmatrix}, \quad
+        \left[ \begin{array}{cccc|c}
+          -1 &2 &-1 &0 &0.15 \\
+          0 &-1 &0 &0 &-4.28 \\
+          0 &0 &2 &-1 &4.88 \\
+          0 &0 &0 &1 &0
+        \end{array} \right]
+      "/>
+      <p>
+        Zauważmy, że wektor trzymający rozwiązania układu równań aktualnie trzyma jeszcze <InlineMath math="0"/> w
+        miejscu <InlineMath math="w_1"/>, a wszystkie jego inne elementy są już wyliczone. Aby obliczyć wartość
+        pierwszego elementu wektora możemy wpierw odjąć obustronnie wszystko, co jej towarzyszy po lewej stronie równania.
+        Wartość tego obliczymy mnożąc odpowiednio już wyliczone wartości przez współczynniki im odpowiadające. Następnie
+        podzielimy obustronnie przez współczynnik stojący przy pierwszym elemencie:
+      </p>
+      <BlockMath math="
+        w_1 = (0.15 - (2w_2 + (-1)w_3 + 0w_0)) \ \div (-1)
+      "/>
+      <p>
+        To omówienie stanowi intuicję jak zalgorytmizować rozwiązywanie układów równań w podstawowy sposób, teraz wystarczy
+        już tylko przenieść to na konkretny kod:
+      </p>
     </>
   );
 }

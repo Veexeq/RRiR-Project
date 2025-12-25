@@ -6,7 +6,8 @@ function Navbar() {
     <div className={styles.wrapper}>
       <Link to="/">Strona główna</Link>
       <Link to="/theory">Teoria</Link>
-      <Link to="/solve">Praktyka</Link>
+      <Link to="/code">Algorytmy</Link>
+      <Link to="/solve">Solver</Link>
     </div>
   );
 }
