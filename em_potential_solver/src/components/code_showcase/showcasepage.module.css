@@ -1,0 +1,12 @@
+:root {
+  --accent-line: #534B52;
+  --bg-ui: #E0DDCF;
+  --side-margin: 25%;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  margin: 1rem var(--side-margin);
+}

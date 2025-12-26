@@ -1,12 +1,14 @@
 import CodeBlock from "../ui/CodeBlock";
-import code from './../../algo/gaussElimination?raw'
+import gaussEliminationSC from './../../algo/gaussElimination?raw'
+
+const LANGUAGE = 'typescript';
 
 function GaussElimination() {
   return (
     <>
       <CodeBlock 
-        code={code}
-        language="TypeScript"
+        code={gaussEliminationSC}
+        language={LANGUAGE}
       />
     </>
   );

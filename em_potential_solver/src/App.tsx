@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Theory from "./components/theory/Theory";
 import TopScroller from "./components/util/TopScroller";
-import GaussElimination from "./components/code_showcase/GaussElimination";
+import ShowcasePage from "./components/code_showcase/ShowcasePage";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/theory" element={<Theory />} />
-          <Route path="/code" element={<GaussElimination />} />
+          <Route path="/code" element={<ShowcasePage />} />
         </Routes>
       </main>
 

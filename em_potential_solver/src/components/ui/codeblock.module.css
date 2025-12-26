@@ -1,5 +1,10 @@
+:root {
+  --accent-line: #534B52;
+}
+
 .wrapper {
   border-radius: 8px;
+  border: 1px var(--accent-line) solid;
   overflow: hidden;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
