@@ -1,10 +1,11 @@
 import { memo } from "react";
 import { BlockMath, InlineMath } from "react-katex";
+import { Link } from "react-router-dom";
 
 function GaussElimination() {
   return (
     <>
-      <h3>Metoda eliminacji Gaussa</h3>
+      <h3 id="gauss">Metoda eliminacji Gaussa</h3>
       <br />
       <p>
         Ta sekcja poświęcona jest omówieniu implementacji metody eliminacji Gaussa, 
@@ -101,7 +102,7 @@ function GaussElimination() {
       "/>
       <p>
         To omówienie stanowi intuicję jak zalgorytmizować rozwiązywanie układów równań w podstawowy sposób, teraz wystarczy
-        już tylko przenieść to na konkretny kod:
+        już tylko przenieść to na konkretny kod. Znajduje się on w zakładce <Link to="/code">algorytmy</Link>.
       </p>
     </>
   );

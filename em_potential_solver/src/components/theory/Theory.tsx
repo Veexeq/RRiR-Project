@@ -29,7 +29,7 @@ function Theory() {
         <li><a href="#" onClick={scrollToSection("boundary-conditions")}>Opracowanie warunków brzegowych</a></li>
         <li><a href="#" onClick={scrollToSection("weak-form")}>Wyprowadzenie sformułowania wariacyjnego</a></li>
         <li><a href="#" onClick={scrollToSection("discrete")}>Dyskretyzacja</a></li>
-        <li>Metoda eliminacji Gaussa</li>
+        <li><a href="#" onClick={scrollToSection("gauss")}>Metoda eliminacji Gaussa</a></li>
         <li>Kwadratury Gauss-Legendre</li>
       </ul>
       <br />

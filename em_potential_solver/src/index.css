@@ -53,6 +53,7 @@
   overflow-y: auto;
   width: 100%;
   position: relative;
+  scrollbar-gutter: stable both-edges;
 }
 
 body, html {
