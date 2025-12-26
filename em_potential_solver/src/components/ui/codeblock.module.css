@@ -7,4 +7,5 @@
   border: 1px var(--accent-line) solid;
   overflow: hidden;
   font-size: 1.1rem;
+  width: 100%;
 }

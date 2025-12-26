@@ -1,6 +1,7 @@
 :root {
   --accent-line: #534B52;
   --bg-ui: #E0DDCF;
+  --bg-ui-hov: #d2cebd;
   --side-margin: 25%;
 }
 
@@ -9,4 +10,18 @@
   flex: 1;
   flex-flow: column nowrap;
   margin: 1rem var(--side-margin);
+}
+
+.button {
+  background-color: var(--bg-ui);
+  /* width: 25%; */
+  padding: 0.5rem;
+  border: var(--accent-line) 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--bg-ui-hov);
 }
