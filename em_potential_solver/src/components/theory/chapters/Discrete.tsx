@@ -402,7 +402,7 @@ function Discrete() {
     <br />
     <p>
       Uogólnienie tego równania na dowolną liczbę elementów skończonych jest bardzo proste 
-      dzięki wyprowadzonym ogólnym wzorom na <InlineMath math="\mathbf{K_G}"/> 
+      dzięki wyprowadzonym ogólnym wzorom na <InlineMath math="\mathbf{K_G}"/>{' '} 
       oraz <InlineMath math="\mathbf{F_G}"/>.
     </p>
     <br/>
