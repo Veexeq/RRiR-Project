@@ -5,6 +5,7 @@ import GaussElimination from './chapters/GaussElimination';
 import Intro from './chapters/Intro';
 import WeakForm from './chapters/WeakForm';
 import styles from './theory.module.css'
+import GaussLegendre from './chapters/GaussLegendre';
 
 function Theory() {
 
@@ -34,7 +35,7 @@ function Theory() {
         <li><a href="#" onClick={scrollToSection("weak-form")}>Wyprowadzenie sformułowania wariacyjnego</a></li>
         <li><a href="#" onClick={scrollToSection("discrete")}>Dyskretyzacja</a></li>
         <li><a href="#" onClick={scrollToSection("gauss")}>Metoda eliminacji Gaussa</a></li>
-        <li>Kwadratury Gauss-Legendre</li>
+        <li><a href="#" onClick={scrollToSection("gauss-legendre")}>Kwadratury Gaussa-Legendre'a</a></li>
       </ul>
       <br />
       <p>
@@ -56,6 +57,7 @@ function Theory() {
       <WeakForm />
       <Discrete />
       <GaussElimination />
+      <GaussLegendre />
     </div>
   );
 }

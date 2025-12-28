@@ -104,6 +104,7 @@ function GaussElimination() {
         To omówienie stanowi intuicję jak zalgorytmizować rozwiązywanie układów równań w podstawowy sposób, teraz wystarczy
         już tylko przenieść to na konkretny kod. Znajduje się on w zakładce <Link to="/code">algorytmy</Link>.
       </p>
+      <br />
     </>
   );
 }
