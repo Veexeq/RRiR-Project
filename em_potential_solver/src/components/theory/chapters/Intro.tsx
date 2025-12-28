@@ -20,8 +20,8 @@ function Intro() {
       "/>
       <p>
         Fakt, że funkcja <InlineMath math="\epsilon_r(x)" /> posiada nieciągłości jest istotny z perspektywy MES, należy 
-        wziąć go pod uwagę dobierając liczbę elementów (<InlineMath math="n" />) na które będziemy dzielili naszą dziedzinę, 
-        która tutaj wynosi <InlineMath math="\Omega=[0,3]" />.
+        wziąć go pod uwagę dobierając liczbę elementów <InlineMath math="n" />, na które będziemy dzielili naszą dziedzinę, 
+        wynoszącą tutaj <InlineMath math="\Omega=[0,3]" />.
       </p>
       <br /><br />
     </>

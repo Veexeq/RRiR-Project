@@ -85,7 +85,7 @@ function WeakForm() {
         \int_{0}^{3} \phi'v'\, dx - v(0)\phi(0) = 
         \int_{0}^{3} \frac{\rho}{\epsilon_r} v \, dx - 5v(0)
       "/>
-      <p>
+      <p id="shift">
         Kolejnym krokiem jest wprowadzenie podstawienia, o którym mówiliśmy analizując niezerowy 
         warunek brzegowy Dirichleta. Zmodyfikuje on wyłącznie lewą stroną, będącą formą dwuliniową 
         zależną od <InlineMath math="\phi"/> oraz <InlineMath math="v"/>:

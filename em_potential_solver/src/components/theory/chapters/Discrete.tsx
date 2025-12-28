@@ -80,7 +80,7 @@ function Discrete() {
       "/>
       <p>
         Dzieje się tak, ponieważ w każdym przedziale <InlineMath math="[x_i, x_{i+1}]"/> na wygląd 
-        funkcji <InlineMath math="w(x)"/> wpływ mają wyłącznie funkcje bazowe <InlineMath math="e_i"/> 
+        funkcji <InlineMath math="w(x)"/> wpływ mają wyłącznie funkcje bazowe <InlineMath math="e_i"/>{' '} 
         oraz <InlineMath math="e_{i+1}"/>. Dzięki temu możemy przekształcić ten fragment w następujący sposób:
       </p>
       <BlockMath math="
@@ -324,8 +324,8 @@ function Discrete() {
     "/>
     <p>
       Aby uwzględnić warunek brzegowy Robina zawarty w powyższym sformułowaniu wariacyjnym, 
-      zauważmy, że jest on uzależniony od wartości funkcji testującej <InlineMath math="v"/> 
-      w punkcie <InlineMath math="x=0"/>. Każda z naszych funkcji bazowych, 
+      zauważmy, że jest on uzależniony od wartości funkcji testującej <InlineMath math="v"/> w 
+      punkcie <InlineMath math="x=0"/>. Każda z naszych funkcji bazowych, 
       oprócz <InlineMath math="e_1(x)"/>, która ma w pierwszym węźle wartość <InlineMath math="1"/>, 
       zeruje się w tym punkcie. Oznacza to, że ten warunek będzie miał wpływ wyłącznie na pierwsze równanie, 
       a więc pierwszy wiersz macierzy. Ponadto, wiemy, że <InlineMath math="w(0)=w_1"/>, gdyż jest to po prostu 
@@ -374,7 +374,8 @@ function Discrete() {
         0.00
       \end{bmatrix}
     "/>
-    <p>Ponadto, możemy uwzględnić warunek brzegowy Dirichleta, który wyeliminuje nam cały 
+    <p id="dirichlet-condition-inclusion">
+      Ponadto, możemy uwzględnić warunek brzegowy Dirichleta, który wyeliminuje nam cały 
       ostatni rząd z układu równań, gdyż mówi on bezpośrednio o wartości 
       funkcji <InlineMath math="w"/> w punkcie <InlineMath math="x = 3"/>. Łącząc wszystko, 
       otrzymujemy poniższe równanie macierzowe:
