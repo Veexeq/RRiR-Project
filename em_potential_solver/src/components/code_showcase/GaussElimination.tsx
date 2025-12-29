@@ -1,5 +1,5 @@
 import { InlineMath } from "react-katex";
-import CodeBlock from "../ui/CodeBlock";
+import CodeBlock from "../ui/code_block/CodeBlock";
 import gaussEliminationSC from './../../algo/GaussElimination?raw';
 import styles from './showcasepage.module.css';
 import { useState } from "react";

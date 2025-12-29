@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import styles from './solver.module.css';
 import { InlineMath } from 'react-katex';
-import HatFunctionsChart from '../ui/HatFunctionsChart';
+import HatFunctionsChart from '../ui/legacy_hat_function_chart/HatFunctionsChart';
 
 function Solver() {
   

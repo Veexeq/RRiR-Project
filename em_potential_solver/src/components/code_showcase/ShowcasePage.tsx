@@ -1,4 +1,4 @@
-import Divider from '../ui/Divider';
+import Divider from '../ui/divider/Divider';
 import GaussElimination from './GaussElimination';
 import GaussLegendre from './GaussLegendre';
 import styles from './showcasepage.module.css';

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CodeBlock from "../ui/CodeBlock";
+import CodeBlock from "../ui/code_block/CodeBlock";
 import styles from './showcasepage.module.css';
 import typesSC from './../../algo/types?raw';
 

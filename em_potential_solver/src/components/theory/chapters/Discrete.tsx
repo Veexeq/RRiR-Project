@@ -1,5 +1,5 @@
 import { BlockMath, InlineMath } from "react-katex";
-import HatFunctionsChart from "../../ui/HatFunctionsChart";
+import HatFunctionsChart from "../../ui/legacy_hat_function_chart/HatFunctionsChart";
 import { memo } from "react";
 
 function Discrete() {

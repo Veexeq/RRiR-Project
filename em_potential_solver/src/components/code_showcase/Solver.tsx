@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InlineMath } from "react-katex";
-import CodeBlock from "../ui/CodeBlock";
+import CodeBlock from "../ui/code_block/CodeBlock";
 import styles from './showcasepage.module.css';
 import solverSC from './../../algo/Solver?raw';
 import { Link } from "react-router-dom";
