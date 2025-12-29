@@ -2,12 +2,6 @@ import type { Matrix, Vector } from "./types";
 
 export class GaussElimination {
 
-  private static precisionRounder(val: number, precision: number): number {
-  
-    const factor = Math.pow(10, precision);
-    return Math.round((val + Number.EPSILON) * factor) / factor;
-  }
-
   // Solves K*w = F, returns w
   public static solve(stiffnessMatrix: Matrix, forcesVector: Vector): Vector {
 
@@ -73,7 +67,7 @@ export class GaussElimination {
       }
 
       // Calculate the w_i
-      w[row] = this.precisionRounder((F[row] - sum) / K[row][row], 2);
+      w[row] = (F[row] - sum) / K[row][row];
     }
 
     return w;

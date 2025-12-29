@@ -21,8 +21,7 @@ function GaussElimination() {
       <br />
       <p>
         Prosty algorytm rozwiązywania równania macierzowego <InlineMath math="
-        \mathbf{A} \mathbf{x} = \mathbf{b}"/> dla dowolnego <InlineMath math="n"/> będącego
-        wymiarem macierzy kwadratowej <InlineMath math="\mathbf{A}"/>.
+        \mathbf{A} \mathbf{x} = \mathbf{b}"/>.
       </p>
       <br />
       <p>Implementacja: <b>TypeScript</b></p>

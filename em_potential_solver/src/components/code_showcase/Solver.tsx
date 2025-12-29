@@ -2,11 +2,12 @@ import { useState } from "react";
 import { InlineMath } from "react-katex";
 import CodeBlock from "../ui/CodeBlock";
 import styles from './showcasepage.module.css';
-import gaussLegendreSC from './../../algo/FemIntegration?raw';
+import solverSC from './../../algo/Solver?raw';
+import { Link } from "react-router-dom";
 
 const LANGUAGE = 'typescript';
 
-function GaussLegendre() {
+function Solver() {
   
   const [codeVisible, setCodeVisible] = useState(false);
   
@@ -17,17 +18,18 @@ function GaussLegendre() {
     return (
       <>
         <br />
-        <h2>Całkowanie numeryczne</h2>
-        <h3>kwadraturami Gaussa-Legendre'a</h3>
+        <h2>Główny solver</h2>
         <br />
+        <p>Główny algorytm, który korzysta z klas napisanych powyżej.</p>
         <p>
-          Algorytm realizujący całkowanie numeryczne kwadraturami Gaussa-Legendre'a
-          dla <InlineMath math="N=2"/>.
+          Rozwiązuje równanie różniczkowe <InlineMath math="\frac{d^2\phi}{dx^2} = -\frac{\rho}{\epsilon_r}"/>{' '}
+          zdefiniowane dokładniej we <Link to="/theory">wstępie teoretycznym</Link>.
         </p>
+        <p>Zwraca tablicę punktów <InlineMath math="(x,y)"/>, która posłuży do generowania wykresu funkcji <InlineMath math="y = \phi(x)"/>.</p>
         <br />
         <p>Implementacja: <b>TypeScript</b></p>
-        <p>Złożoność obliczeniowa: <InlineMath math="O(n)"/></p>
-        <p>Złożoność pamięciowa: <InlineMath math="O(1)"/></p>
+        <p>Złożoność obliczeniowa: <InlineMath math="O(n^3)"/></p>
+        <p>Złożoność pamięciowa: <InlineMath math="O(n^2)"/></p>
         <br />
         <button 
           className={styles.button}
@@ -39,7 +41,7 @@ function GaussLegendre() {
         {
           codeVisible && (
           <CodeBlock 
-            code={gaussLegendreSC}
+            code={solverSC}
             language={LANGUAGE}
           />
           )
@@ -48,4 +50,4 @@ function GaussLegendre() {
     );
 }
 
-export default GaussLegendre;
+export default Solver;

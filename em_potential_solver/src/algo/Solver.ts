@@ -47,8 +47,8 @@ export class Solver {
     // we can take boudary conditions into consideration (as explained in 'theory' page)
     
     // 1. Robin condition
-    K[0][0] += 1.0;
-    F[0] += 5.0;
+    K[0][0] += -1.0;
+    F[0] += -5.0;
 
     // 2. Dirichlet condition
     for (let i = 0; i < nodeCount - 1; i++) {

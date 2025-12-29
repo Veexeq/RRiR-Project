@@ -63,7 +63,7 @@ export class FemIntegration {
 
   private static rho(x: number): number {
 
-    if (1 <= x && x <= 3) {
+    if (0 <= x && x <= 3) {
       return 1;
     }
 
