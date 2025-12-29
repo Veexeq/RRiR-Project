@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { BlockMath, InlineMath } from "react-katex";
+import { Link } from "react-router-dom";
 
 function GaussLegendre() {
 
@@ -87,6 +88,67 @@ function GaussLegendre() {
         J = \frac{dx}{d\xi} = \frac{d}{d\xi} (x_{mid} + \frac{h}{2} \, \xi) = \frac{h}{2} \\[2ex]
         dx = \frac{h}{2} \, d\xi
       "/>
+      <p>
+        W naszym sformułowaniu wariacyjnym pojawiają się pochodne funkcji bazowych <InlineMath math="e_i"/>, czyli <InlineMath math="\frac{de_i}{dx}"/>.
+        Je również musimy przekształcić na funkcje uzależnione od dziedziny <InlineMath math="\xi"/>:
+      </p>
+      <BlockMath math="
+        \frac{de_i}{dx} = \frac{de_i}{d\xi} \frac{d\xi}{dx} = \frac{2}{h} \frac{de_i}{d\xi}
+      "/>
+      <p>Na przedziale <InlineMath math="[-1, 1]"/> nasze daszkowe funkcje bazowe mają następującą postać:</p>
+      <BlockMath math="
+        \begin{dcases}
+          e_1(\xi) = \frac{1-\xi}{2} \\[2ex]
+          e_2(\xi) = \frac{1 + \xi}{2}
+        \end{dcases}
+      "/>
+      <br />
+      <h4>Transformacja elementów macierzy sztywności i wektora sił</h4>
+      <br />
+      <p>Możemy teraz dokonać przekształcenia <InlineMath math="i"/>-tego elementu skończonego, danego wzorem:</p>
+      <BlockMath math="
+        {\Large \forall}_{i \, \in \, \{1, \, ...,  \, n\}} \ \mathbf{K^i} = 
+        \begin{bmatrix}
+          \mathbf{B_{(i-1)(i-1)}} & \mathbf{B_{(i-1)i}} \\
+          \mathbf{B_{i(i-1)}} & \mathbf{B_{ii}}
+        \end{bmatrix} 
+        \ , \quad gdzie \quad
+        \mathbf{B_{pq}} = \int_{x_{i-1}}^{x_i} \frac{de_p}{dx} \frac{de_q}{dx} \, dx
+      "/>
+      <p>Na poniższy:</p>
+      <BlockMath math="
+        \mathbf{B_{ij}} = 
+        \int_{-1}^{1} \left( \frac{2}{h} \frac{de_1}{d\xi} \right) \left( \frac{2}{h} \frac{de_2}{d\xi} \right) \frac{h}{2} \, d\xi =
+        \sum_{i=1}^{2} \left( \frac{2}{h} w_i \frac{de_1(\xi_i)}{d\xi} \frac{de_2(\xi_i)}{d\xi} \right) =
+        \frac{2}{h} \sum_{i=1}^{2} \left( \frac{de_1(\xi_i)}{d\xi} \frac{de_2(\xi_i)}{d\xi} \right)
+      "/>
+      <p>Analogicznie czynimy przekształcając lokalny wektor sił, który wygląda w następujący sposób:</p>
+      <BlockMath math="
+        {\Large \forall}_{i \, \in \, \{1, \, ...,  \, n\}} \ \mathbf{F^i} = 
+        \begin{bmatrix}
+          \mathbf{L_{i-1}} \\
+          \mathbf{L_{i}}
+        \end{bmatrix} 
+        \ , \quad gdzie \quad
+        \mathbf{L_p} = \int_{x_{i-1}}^{x_{i}} \frac{\rho(x)}{\epsilon_r(x)} e_p(x) \, dx
+      "/>
+      <p>Na poniższy wektor sił, w nowym układzie odniesienia:</p>
+      <BlockMath math="
+      \begin{dcases}
+        p \ mod \ 2 = 0 \ \Rightarrow \ \mathbf{L_p} = 
+          \int_{-1}^{1} \left[ \frac{\rho(x(\xi))}{\epsilon_r(x(\xi))} e_1(\xi) \right] \frac{h}{2} \, d\xi =
+          \frac{h}{2} \sum_{i=1}^{2} \frac{\rho(x(\xi))}{\epsilon_r(x(\xi))}e_1(\xi) \\[2ex]
+        p \ mod \ 2 = 1 \ \Rightarrow \ \mathbf{L_p} = 
+          \int_{-1}^{1} \left[ \frac{\rho(x(\xi))}{\epsilon_r(x(\xi))} e_2(\xi) \right] \frac{h}{2} \, d\xi =
+          \frac{h}{2} \sum_{i=1}^{2} \frac{\rho(x(\xi))}{\epsilon_r(x(\xi))}e_2(\xi)
+      \end{dcases}
+      "/>
+      <p>
+        Udało nam się przygotować do całkowania numerycznego dla każdego elementu skończonego, a więc wyprowadzić wzory
+        na <InlineMath math="\mathbf{B_{pq}}"/> oraz <InlineMath math="\mathbf{L_{p}}"/>. Teraz wystarczy to złożyć w globalną
+        macierz i wektor sił, a następnie zalgorytmizować. Kod realizujący całkowanie numeryczne znajduje się w zakładce{' '}
+        <Link to="/code">algorytmy</Link>.
+      </p>
     </>
   );
 }
