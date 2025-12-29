@@ -38,6 +38,7 @@ function HatFunctionsChart() {
             tickCount={4}
             stroke="#534B52"
             padding={{ left: 20, right: 20 }}
+            tick={{ fontSize: 12, fill: '#534B52' }}
           />
 
           <YAxis 
@@ -45,6 +46,7 @@ function HatFunctionsChart() {
             padding={{ top: 0, bottom: 0 }}
             stroke="#534B52"
             ticks={[0, 0.25, 0.5, 0.75, 1.0, 1.25]}
+            tick={{ fontSize: 12, fill: '#534B52' }}
           />
 
           <Tooltip

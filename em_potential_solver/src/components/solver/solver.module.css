@@ -32,6 +32,8 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
+  height: 100%;
   padding: 1rem;
   line-height: auto;
 }
