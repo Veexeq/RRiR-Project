@@ -72,3 +72,13 @@
   background-color: var(--bg-ui-hover);
   font-weight: bold;
 }
+
+.wrapper .chartWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 10px 0;
+}

@@ -64,7 +64,9 @@ function Solver() {
           </div>
         </form>
         <br />
-        <SolutionChartView data={data}/>
+        <div className={styles.chartWrapper}>
+          <SolutionChartView data={data}/>
+        </div>
         <br />
         <form onSubmit={handleSubmit}>
           <button
