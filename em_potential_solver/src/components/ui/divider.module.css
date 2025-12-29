@@ -1,0 +1,17 @@
+:root {
+  --text-body: #474448;
+}
+
+.divider {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-body);
+  line-height: 1;
+  user-select: none;
+}
