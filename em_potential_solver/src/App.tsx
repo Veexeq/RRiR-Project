@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import Theory from "./components/theory/Theory";
 import TopScroller from "./components/util/TopScroller";
 import ShowcasePage from "./components/code_showcase/ShowcasePage";
+import Solver from "./components/solver/Solver";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/code" element={<ShowcasePage />} />
+          <Route path="/solve" element={<Solver />} />
         </Routes>
       </main>
 
