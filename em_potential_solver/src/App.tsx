@@ -10,7 +10,7 @@ import Solver from "./components/solver/Solver";
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/RRiR-Project">
       {/* TopScroller is an util that scrolls to the top of
       the page after changing pages */}
       <TopScroller />
