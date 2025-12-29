@@ -11,7 +11,7 @@ interface Point {
 export const SolutionChart = ({ data }: { data: Point[] }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.chartWrapper}>
+      <div className={`${styles.baseWrapper} ${styles.fixedRatio}`}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={chartMargins}>
             

@@ -5,6 +5,9 @@ import type { ChartData } from '../../algo/types';
 import { Solver as SolverEngine } from '../../algo/Solver';
 import { SolutionChartView } from '../ui/chart_views/SolutionChartView';
 
+const LOWER_BOUND = 3;
+const UPPER_BOUND = 100;
+
 function Solver() {
 
   const [n, setn] = useState<number | string>(3);
@@ -31,9 +34,13 @@ function Solver() {
     e.preventDefault();
     
     const num = Number(n);
-    if (num < 3 || num > 1000) {
+    if (num < LOWER_BOUND || num > UPPER_BOUND) {
 
-      alert("Liczba elementów skończonych (n) powinna być ze zbioru: \n{3, 4, ..., 1000}.");
+      alert(
+        `Liczba elementów skończonych (n) powinna być:
+        - większa od ${LOWER_BOUND}
+        - mniejsza od ${UPPER_BOUND}`
+      );
       return;
     }
     
@@ -60,7 +67,7 @@ function Solver() {
               value={n}
               onChange={inputChange}
             />
-            <p>(Dla jak najdokładniejszego wykresu powinna ona być podzielna przez 3)</p>
+            {/* <p>(Dla jak najdokładniejszego wykresu powinna ona być podzielna przez 3)</p> */}
           </div>
         </form>
         <br />

@@ -10,8 +10,8 @@ interface SolutionChartProps {
 
 export const SolutionChartView = ({ data }: SolutionChartProps) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.chartWrapper}>
+    <div className={styles.container} style={{ width: '100%', height: '100%' }}>
+      <div className={`${styles.baseWrapper} ${styles.fillContainer}`}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={chartMargins}>
             

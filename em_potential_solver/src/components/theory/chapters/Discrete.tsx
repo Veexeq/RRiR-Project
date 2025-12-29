@@ -1,6 +1,7 @@
 import { BlockMath, InlineMath } from "react-katex";
 import { memo } from "react";
 import { HatFunctionsView } from "../../ui/chart_views/HatFunctionsView";
+import styles from './../theory.module.css';
 
 function Discrete() {
   return (
@@ -49,7 +50,10 @@ function Discrete() {
       </p>
       <br />
       <p>Rozważając przypadek gdzie <InlineMath math="n = 3"/>, funkcje daszkowe będą wyglądać w następujący sposób:</p>
-      <HatFunctionsView />
+      <br />
+      <div className={styles.chartWrapper}>
+        <HatFunctionsView />
+      </div>
       <br />
       <h4>Budowanie macierzy sztywności</h4>
       <br />

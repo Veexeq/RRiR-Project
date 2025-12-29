@@ -4,25 +4,28 @@
 
 .container {
   width: 100%;
-  height: 100%;
-  margin: 0;    
-  
-  max-width: none; 
 }
 
-.chartWrapper {
+.baseWrapper {
   width: 100%;
-  height: 100%; 
-  
-  aspect-ratio: auto; 
-  
-  min-height: 0; 
-  max-height: none;
-
   position: relative;
   background: var(--bg-color);
   border-radius: 8px;
-  
   padding: 1rem;
   box-sizing: border-box;
+}
+
+.fillContainer {
+  height: 100%;      
+  min-height: 0;      
+  max-width: none;
+}
+
+.fixedRatio {
+  height: auto;       
+  aspect-ratio: 16 / 9; 
+  max-height: 600px;
+  
+  max-width: 1200px; 
+  margin: 0 auto;
 }
