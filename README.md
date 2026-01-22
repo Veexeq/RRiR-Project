@@ -10,4 +10,4 @@ variant = mappedValue % 5 + 1       # 5
 ## Tech stack:
 Projekt zrealizowano przy pomocy **TypeScript**, front-end został zbudowany przy użyciu **React**. Do wykresów użyto **Recharts**, a do renderowania *LaTeX* **react-katex**.
 
-Strona została wdrożona przy pomocy **GitHub Pages**, dostępna jest pod linkiem \<insertlink>. 
+Strona została wdrożona przy pomocy **GitHub Pages**. 
